@@ -1,16 +1,15 @@
+@file:OptIn(ExperimentalJsExport::class)
+
 package com.earthapp.shovel
 
-import io.ktor.client.HttpClient
-import io.ktor.client.engine.HttpClientEngine
-import io.ktor.client.request.HttpRequestBuilder
-import io.ktor.client.request.cookie
-import io.ktor.client.request.get
-import io.ktor.client.request.headers
-import io.ktor.client.statement.bodyAsText
-import io.ktor.http.isSuccess
-import io.ktor.utils.io.charsets.Charsets
+import io.ktor.client.*
+import io.ktor.client.engine.*
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
+import io.ktor.http.*
+import io.ktor.utils.io.charsets.*
 import kotlinx.io.IOException
-import kotlin.collections.contains
+import kotlin.js.ExperimentalJsExport
 import kotlin.js.JsExport
 import kotlin.jvm.JvmOverloads
 
@@ -80,16 +79,19 @@ suspend fun String.fetchDocument(request: HttpRequestBuilder.() -> Unit = {}): D
 /**
  * Closes the client. This should be called when the API is no longer needed.
  */
+@JsExport
 fun closeClient() = client.close()
 
 /**
  * Clears the document cache.
  */
+@JsExport
 fun clearCache() = cache.clear()
 
 /**
  * Represents an HTML element.
  */
+@JsExport
 class Element internal constructor(
     /**
      * The name of the tag (e.g., "div", "span").
@@ -123,6 +125,7 @@ class Element internal constructor(
 /**
  * Represents an HTML document.
  */
+@JsExport
 class Document internal constructor(
     /**
      * The URL of the document.
@@ -181,6 +184,7 @@ expect fun Document.querySelectorAll(selector: String): List<Element>
  * @param selector The CSS selector to match.
  * @return The first element that matches the selector, or null if it doesn't exist.
  */
+@JsExport
 fun Document.querySelector(selector: String): Element? = querySelectorAll(selector).firstOrNull()
 
 /**
@@ -188,6 +192,7 @@ fun Document.querySelector(selector: String): Element? = querySelectorAll(select
  * @param id The ID of the element to get.
  * @return The first element with the specified ID, or null if it doesn't exist.
  */
+@JsExport
 fun Document.getElementById(id: String): Element? = querySelector("#$id")
 
 /**
@@ -195,6 +200,7 @@ fun Document.getElementById(id: String): Element? = querySelector("#$id")
  * @param className The class name of the elements to get.
  * @return A list of elements with the specified class name.
  */
+@JsExport
 fun Document.getElementsByClassName(className: String): List<Element> = querySelectorAll(".$className")
 
 /**
@@ -202,6 +208,7 @@ fun Document.getElementsByClassName(className: String): List<Element> = querySel
  * @param name The name of the input element.
  * @return The value of the input element, or null if it doesn't exist.
  */
+@JsExport
 fun Document.inputValue(name: String): String? {
     val input = querySelector("input[name=$name]") ?: return null
     return input["value"] ?: input["checked"]

@@ -20,6 +20,8 @@ private fun com.fleeksoft.ksoup.nodes.Element.convert(): Element {
     )
 }
 
+@OptIn(ExperimentalJsExport::class)
+@JsExport
 actual fun Document.querySelectorAll(selector: String): List<Element> {
     val doc = Ksoup.parse(html)
     return doc.select(selector).map { it.convert() }
