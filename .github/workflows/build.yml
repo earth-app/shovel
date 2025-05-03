@@ -228,7 +228,7 @@ jobs:
           ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.SIGNING_PRIVATE_KEY }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.SIGNING_PASSWORD }}
-        run: ./gradlew publishAndReleaseToMavenCentral -Psnapshot=true
+        run: ./gradlew publishAllPublicationsToMavenCentralRepository -Psnapshot=true
       - name: Publish to GitHub Packages
         if: ${{ github.ref_name == 'master' }}
         env:
