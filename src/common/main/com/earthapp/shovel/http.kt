@@ -160,6 +160,13 @@ class Document internal constructor(
     val head: Element
         get() = querySelector("head") ?: error("Document does not have a head element")
 
+    /**
+     * Gets the title of the document.
+     * @return The title of the document.
+     * @throws IllegalStateException if the document does not have a title element.
+     */
+    val title: String
+        get() = querySelector("title")?.textContent ?: error("Document does not have a title element")
 }
 
 /**
