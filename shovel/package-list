@@ -1,0 +1,31 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.earthapp.shovel////PointingToDeclaration/shovel/com.earthapp.shovel/index.html
+$dokka.location:com.earthapp.shovel//clearCache/#/PointingToDeclaration/shovel/com.earthapp.shovel/clear-cache.html
+$dokka.location:com.earthapp.shovel//closeClient/#/PointingToDeclaration/shovel/com.earthapp.shovel/close-client.html
+$dokka.location:com.earthapp.shovel//engine/#/PointingToDeclaration/shovel/com.earthapp.shovel/engine.html
+$dokka.location:com.earthapp.shovel//fetch/#kotlin.String#kotlin.Function1[io.ktor.client.request.HttpRequestBuilder,kotlin.Unit]/PointingToDeclaration/shovel/com.earthapp.shovel/fetch.html
+$dokka.location:com.earthapp.shovel//fetchDocument/kotlin.String#kotlin.Function1[io.ktor.client.request.HttpRequestBuilder,kotlin.Unit]/PointingToDeclaration/shovel/com.earthapp.shovel/fetch-document.html
+$dokka.location:com.earthapp.shovel//getElementById/com.earthapp.shovel.Document#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/get-element-by-id.html
+$dokka.location:com.earthapp.shovel//getElementsByClassName/com.earthapp.shovel.Document#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/get-elements-by-class-name.html
+$dokka.location:com.earthapp.shovel//inputValue/com.earthapp.shovel.Document#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/input-value.html
+$dokka.location:com.earthapp.shovel//querySelector/com.earthapp.shovel.Document#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/query-selector.html
+$dokka.location:com.earthapp.shovel//querySelectorAll/com.earthapp.shovel.Document#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/query-selector-all.html
+$dokka.location:com.earthapp.shovel//transformClassName/com.earthapp.shovel.Document#kotlin.String#kotlin.Function1[kotlin.collections.List[com.earthapp.shovel.Element],TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/shovel/com.earthapp.shovel/transform-class-name.html
+$dokka.location:com.earthapp.shovel//transformId/com.earthapp.shovel.Document#kotlin.String#kotlin.Function1[com.earthapp.shovel.Element,TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/shovel/com.earthapp.shovel/transform-id.html
+$dokka.location:com.earthapp.shovel//transformQuerySelector/com.earthapp.shovel.Document#kotlin.String#kotlin.Function1[com.earthapp.shovel.Element,TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/shovel/com.earthapp.shovel/transform-query-selector.html
+$dokka.location:com.earthapp.shovel//transformQuerySelectorAll/com.earthapp.shovel.Document#kotlin.String#kotlin.Function1[kotlin.collections.List[com.earthapp.shovel.Element],TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/shovel/com.earthapp.shovel/transform-query-selector-all.html
+$dokka.location:com.earthapp.shovel/Document///PointingToDeclaration/shovel/com.earthapp.shovel/-document/index.html
+$dokka.location:com.earthapp.shovel/Document/body/#/PointingToDeclaration/shovel/com.earthapp.shovel/-document/body.html
+$dokka.location:com.earthapp.shovel/Document/bodyElements/#/PointingToDeclaration/shovel/com.earthapp.shovel/-document/body-elements.html
+$dokka.location:com.earthapp.shovel/Document/head/#/PointingToDeclaration/shovel/com.earthapp.shovel/-document/head.html
+$dokka.location:com.earthapp.shovel/Document/html/#/PointingToDeclaration/shovel/com.earthapp.shovel/-document/html.html
+$dokka.location:com.earthapp.shovel/Document/url/#/PointingToDeclaration/shovel/com.earthapp.shovel/-document/url.html
+$dokka.location:com.earthapp.shovel/Element///PointingToDeclaration/shovel/com.earthapp.shovel/-element/index.html
+$dokka.location:com.earthapp.shovel/Element/attributes/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/attributes.html
+$dokka.location:com.earthapp.shovel/Element/children/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/children.html
+$dokka.location:com.earthapp.shovel/Element/get/#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/-element/get.html
+$dokka.location:com.earthapp.shovel/Element/innerHTML/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/inner-h-t-m-l.html
+$dokka.location:com.earthapp.shovel/Element/tagName/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/tag-name.html
+$dokka.location:com.earthapp.shovel/Element/textContent/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/text-content.html
+com.earthapp.shovel
