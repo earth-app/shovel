@@ -1,0 +1,7 @@
+.idea/
+.vscode/
+.kotlin/
+.gradle/
+build/
+*.podspec
+kotlin-js-store/
