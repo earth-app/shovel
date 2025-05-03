@@ -357,7 +357,7 @@ npmPublish {
         }
 
         register("GithubPackages") {
-            uri.set("https://npm.pkg.github.com/gmitch215")
+            uri.set("https://npm.pkg.github.com/earth-app")
             authToken.set(System.getenv("GITHUB_TOKEN"))
         }
     }
