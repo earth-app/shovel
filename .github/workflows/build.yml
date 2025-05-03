@@ -92,15 +92,28 @@ jobs:
         run: ./gradlew --stop
 
   test:
-    runs-on: macos-latest
-    timeout-minutes: 120
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
     needs: setup
 
     permissions:
       checks: write
       pull-requests: write
 
-    name: Test Project
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: macos-x64
+            os: macos-13
+          - name: macos-arm64
+            os: macos-15
+          - name: windows-x64
+            os: windows-2025
+          - name: linux-x64
+            os: ubuntu-24.04
+
+    name: Test Project / ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - name: Setup JDK 17
@@ -127,7 +140,7 @@ jobs:
         if: success() || failure()
         uses: actions/upload-artifact@v4
         with:
-          name: test-report
+          name: test-report-${{ matrix.name }}-${{ github.run_id }}
           path: build/reports/tests/
       - name: Collect JaCoCo Report
         if: ${{ github.event_name != 'pull_request' }}
@@ -135,7 +148,7 @@ jobs:
         uses: PavanMudigonda/jacoco-reporter@v5.1
         with:
           coverage_results_path: build/jacoco.xml
-          coverage_report_name: Code Coverage
+          coverage_report_name: Code Coverage (${{ matrix.name }})
           github_token: ${{ secrets.GITHUB_TOKEN }}
           skip_check_run: false
           minimum_coverage: 85
@@ -154,7 +167,7 @@ jobs:
         if: ${{ github.event_name != 'pull_request' }}
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-report
+          name: coverage-report-${{ matrix.name }}-${{ github.run_id }}
           path: "*/coverage-results.md"
       - name: Upload Code Coverage Artifacts (Pull Request)
         if: ${{ github.event_name == 'pull_request' }}
@@ -193,7 +206,7 @@ jobs:
 
   publish:
     runs-on: macos-latest
-    needs: build
+    needs: [build, test]
     name: Publish to Repository
     if: ${{ github.event_name != 'pull_request' }}
     timeout-minutes: 30
