@@ -1,5 +1,8 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
+$dokka.location:////PointingToDeclaration/shovel/[root]/index.html
+$dokka.location://fetchAsPromise/#kotlin.String/PointingToDeclaration/shovel/[root]/fetch-as-promise.html
+$dokka.location://fetchDocumentAsPromise/kotlin.String#/PointingToDeclaration/shovel/[root]/fetch-document-as-promise.html
 $dokka.location:com.earthapp.shovel////PointingToDeclaration/shovel/com.earthapp.shovel/index.html
 $dokka.location:com.earthapp.shovel//clearCache/#/PointingToDeclaration/shovel/com.earthapp.shovel/clear-cache.html
 $dokka.location:com.earthapp.shovel//closeClient/#/PointingToDeclaration/shovel/com.earthapp.shovel/close-client.html
