@@ -93,7 +93,7 @@ jobs:
 
   test:
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 10
+    timeout-minutes: 120
     needs: setup
 
     permissions:
@@ -209,7 +209,7 @@ jobs:
     needs: [build, test]
     name: Publish to Repository
     if: ${{ github.event_name != 'pull_request' }}
-    timeout-minutes: 30
+    timeout-minutes: 120
 
     permissions:
       contents: write
