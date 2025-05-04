@@ -136,7 +136,7 @@ jobs:
         run: chmod +x ./gradlew
       - name: Install Windows Dependencies
         if: ${{ matrix.name == 'windows-x64' }}
-        run: choco install curl -y
+        run: choco install curl openssl -y
       - name: Gradle Test
         run: ./gradlew allTests jvmJacocoTestReport
       - name: Archive Test Reports
