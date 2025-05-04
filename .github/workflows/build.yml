@@ -136,8 +136,7 @@ jobs:
         run: chmod +x ./gradlew
       - name: Install Windows Dependencies
         if: ${{ matrix.name == 'windows-x64' }}
-        run: |
-          pacman -S mingw-w64-x86_64-curl mingw-w64-x86_64-openssl mingw-w64-x86_64-zlib mingw-w64-x86_64-libssh2
+        run: choco install curl -y
       - name: Gradle Test
         run: ./gradlew allTests jvmJacocoTestReport
       - name: Archive Test Reports
