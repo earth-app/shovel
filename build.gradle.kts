@@ -128,7 +128,7 @@ kotlin {
     }
     
     targets.filterIsInstance<KotlinNativeTarget>().forEach { target ->
-        target.binaries { 
+        target.binaries {
             staticLib(listOf(if (hasProperty("snapshot")) NativeBuildType.DEBUG else NativeBuildType.RELEASE)) { 
                 baseName = project.name
                 export("com.fleeksoft.ksoup:ksoup-lite:$ksoupVersion")
@@ -231,6 +231,10 @@ tasks {
             html.required.set(true)
             html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
         }
+    }
+
+    if ("windows" in System.getProperty("os.name").lowercase()) {
+        named("linkDebugTestLinuxX64") { enabled = false }
     }
 }
 
