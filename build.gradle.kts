@@ -73,8 +73,12 @@ kotlin {
 
     tvosArm64()
     tvosX64()
+    tvosSimulatorArm64()
+    watchosX64()
     watchosArm32()
     watchosArm64()
+    watchosDeviceArm64()
+    watchosSimulatorArm64()
 
     val ktorVersion = "3.1.2"
     val ksoupVersion = "0.2.0"
