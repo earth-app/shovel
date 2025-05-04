@@ -3,10 +3,11 @@ package com.earthapp.shovel
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.engine.darwin.Darwin
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
 
 actual val engine: HttpClientEngine = Darwin.create {
     pipelining = true
-    dispatcher = Dispatchers.Default
+    dispatcher = Dispatchers.IO.limitedParallelism(PARALLEL_COUNT)
 
     configureRequest {
         setAllowsCellularAccess(true)
