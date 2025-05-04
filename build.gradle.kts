@@ -115,7 +115,7 @@ kotlin {
         }
 
         linuxMain.dependencies {
-            api("io.ktor:ktor-client-cio:$ktorVersion")
+            api("io.ktor:ktor-client-curl:$ktorVersion")
         }
 
         jsMain.dependencies {
@@ -136,7 +136,7 @@ kotlin {
                 else if ("os" in target.name)
                     export("io.ktor:ktor-client-darwin:${ktorVersion}")
                 else
-                    export("io.ktor:ktor-client-cio:${ktorVersion}")
+                    export("io.ktor:ktor-client-curl:${ktorVersion}")
             }
 
             sharedLib {
@@ -149,7 +149,7 @@ kotlin {
                 else if ("os" in target.name)
                     export("io.ktor:ktor-client-darwin:${ktorVersion}")
                 else
-                    export("io.ktor:ktor-client-cio:${ktorVersion}")
+                    export("io.ktor:ktor-client-curl:${ktorVersion}")
             }
 
             if ("os" in target.name) // macos, ios, tvos, watchos
