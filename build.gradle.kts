@@ -8,12 +8,12 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 import org.jetbrains.kotlin.gradle.targets.js.yarn.yarn
 
 plugins {
-    kotlin("multiplatform") version "2.1.20"
-    kotlin("plugin.serialization") version "2.1.20"
-    kotlin("native.cocoapods") version "2.1.20"
+    kotlin("multiplatform") version "2.1.21"
+    kotlin("plugin.serialization") version "2.1.21"
+    kotlin("native.cocoapods") version "2.1.21"
     id("org.jetbrains.dokka") version "2.0.0"
     id("com.android.library") version "8.10.0"
-    id("com.vanniktech.maven.publish") version "0.31.0"
+    id("com.vanniktech.maven.publish") version "0.32.0"
     id("dev.petuska.npm.publish") version "3.5.3"
 
     `maven-publish`
