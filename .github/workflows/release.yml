@@ -57,6 +57,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Change Permissions
+        run: chmod +x ./gradlew
       - name: Extract Gradle version
         run: echo "VERSION=$(./gradlew properties | grep '^version:' | awk '{print $2}')" >> $GITHUB_ENV
       - name: Retrieve Latest Tag
