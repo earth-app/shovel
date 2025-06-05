@@ -41,8 +41,11 @@ $dokka.location:com.earthapp.shovel/Document/url/#/PointingToDeclaration/shovel
 $dokka.location:com.earthapp.shovel/Element///PointingToDeclaration/shovel/com.earthapp.shovel/-element/index.html
 $dokka.location:com.earthapp.shovel/Element/attributes/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/attributes.html
 $dokka.location:com.earthapp.shovel/Element/children/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/children.html
+$dokka.location:com.earthapp.shovel/Element/classes/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/classes.html
 $dokka.location:com.earthapp.shovel/Element/get/#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/-element/get.html
+$dokka.location:com.earthapp.shovel/Element/id/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/id.html
 $dokka.location:com.earthapp.shovel/Element/innerHTML/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/inner-h-t-m-l.html
+$dokka.location:com.earthapp.shovel/Element/style/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/style.html
 $dokka.location:com.earthapp.shovel/Element/tagName/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/tag-name.html
 $dokka.location:com.earthapp.shovel/Element/textContent/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/text-content.html
 com.earthapp.shovel
