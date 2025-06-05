@@ -182,10 +182,11 @@ expect fun Document.querySelectorAll(selector: String): List<Element>
 /**
  * Gets the first element that matches the specified CSS selector.
  * @param selector The CSS selector to match.
+ * @param filter An optional filter function to apply to the elements.
  * @return The first element that matches the selector, or null if it doesn't exist.
  */
 @JsExport
-fun Document.querySelector(selector: String): Element? = querySelectorAll(selector).firstOrNull()
+fun Document.querySelector(selector: String, filter: (Element) -> Boolean = { true }): Element? = querySelectorAll(selector).firstOrNull(filter)
 
 /**
  * Gets the first element with the specified ID.
