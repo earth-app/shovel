@@ -176,9 +176,12 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         uses: madrapps/jacoco-report@v1.7.2
         with:
+          title: Code Coverage Report for ${{ github.head_ref }} on ${{ matrix.name }}
           paths: build/jacoco.xml
           token: ${{ secrets.GITHUB_TOKEN }}
           pass-emoji: ✅
+          comment-type: both
+          update-comment: true
           min-coverage-overall: 85
           min-coverage-changed-files: 90
 
