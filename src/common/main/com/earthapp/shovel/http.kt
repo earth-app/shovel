@@ -120,6 +120,28 @@ class Element internal constructor(
      * @return The value of the attribute, or null if it doesn't exist.
      */
     operator fun get(attribute: String): String? = attributes[attribute]
+
+    /**
+     * Gets the ID of the element.
+     * @return The ID of the element, or null if it doesn't exist.
+     */
+    val id: String?
+        get() = attributes["id"]
+
+    /**
+     * Gets the class names of the element.
+     * @return A list of class names, or an empty list if the element has no classes.
+     */
+    val classes: List<String>
+        get() = attributes["class"]?.split("\\s+".toRegex()) ?: emptyList()
+
+    /**
+     * Gets the inline CSS style of the element.
+     * @return The inline style as a string, or null if it doesn't exist.
+     */
+    val style: String?
+        get() = attributes["style"]
+
 }
 
 /**
