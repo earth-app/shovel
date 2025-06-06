@@ -192,6 +192,31 @@ class Document internal constructor(
      */
     val title: String
         get() = querySelector("title")?.textContent ?: error("Document does not have a title element")
+
+    /**
+     * Gets a map of all the meta tags in the document to their values.
+     * The keys are the names or properties of the meta tags, and the values are their content.
+     * If a meta tag is repeated, its content will be stored in a list, otherwise the list will contain a single value.
+     * @return A map of meta tag names to their content.
+     */
+    val metadata: Map<String, List<String>>
+        get() = querySelectorAll("meta").groupBy(
+            keySelector = { it["name"] ?: it["property"] ?: "" },
+            valueTransform = { it["content"] ?: "" }
+        ).filterKeys { it.isNotEmpty() }.mapValues { it.value.filter { content -> content.isNotEmpty() } }
+
+    /**
+     * Gets a map of all the link tags in the document to their href values.
+     * The keys are the rel attributes of the link tags, and the values are their href attributes.
+     * If a link tag is repeated, its href will be stored in a list, otherwise the list will contain a single value.
+     * @return A map of link rel attributes to their href values.
+     */
+    val linkTags: Map<String, List<String>>
+        get() = querySelectorAll("link").groupBy(
+            keySelector = { it["rel"] ?: "" },
+            valueTransform = { it["href"] ?: "" }
+        ).filterKeys { it.isNotEmpty() }.mapValues { it.value.filter { href -> href.isNotEmpty() } }
+
 }
 
 /**
