@@ -36,6 +36,8 @@ $dokka.location:com.earthapp.shovel/Document/body/#/PointingToDeclaration/shove
 $dokka.location:com.earthapp.shovel/Document/bodyElements/#/PointingToDeclaration/shovel/com.earthapp.shovel/-document/body-elements.html
 $dokka.location:com.earthapp.shovel/Document/head/#/PointingToDeclaration/shovel/com.earthapp.shovel/-document/head.html
 $dokka.location:com.earthapp.shovel/Document/html/#/PointingToDeclaration/shovel/com.earthapp.shovel/-document/html.html
+$dokka.location:com.earthapp.shovel/Document/linkTags/#/PointingToDeclaration/shovel/com.earthapp.shovel/-document/link-tags.html
+$dokka.location:com.earthapp.shovel/Document/metadata/#/PointingToDeclaration/shovel/com.earthapp.shovel/-document/metadata.html
 $dokka.location:com.earthapp.shovel/Document/title/#/PointingToDeclaration/shovel/com.earthapp.shovel/-document/title.html
 $dokka.location:com.earthapp.shovel/Document/url/#/PointingToDeclaration/shovel/com.earthapp.shovel/-document/url.html
 $dokka.location:com.earthapp.shovel/Element///PointingToDeclaration/shovel/com.earthapp.shovel/-element/index.html
