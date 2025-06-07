@@ -23,6 +23,7 @@ private fun org.jsoup.nodes.Element.convert(): Element {
         tagName = tagName(),
         innerHTML = html(),
         textContent = text(),
+        ownTextContent = ownText(),
         attributes = attributes().asList().associate { it.key to it.value },
         children = children().map { it.convert() }
     )

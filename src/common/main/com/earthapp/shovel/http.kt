@@ -102,9 +102,13 @@ class Element internal constructor(
      */
     val innerHTML: String,
     /**
-     * The text content of the element.
+     * The text content of the element and its children, excluding HTML tags.
      */
     val textContent: String,
+    /**
+     * The text content of the element itself, excluding its children.
+     */
+    val ownTextContent: String = textContent,
     /**
      * A map of attributes of the element.
      */

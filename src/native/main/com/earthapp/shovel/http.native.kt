@@ -7,6 +7,7 @@ private fun com.fleeksoft.ksoup.nodes.Element.convert(): Element {
         tagName(),
         html(),
         text(),
+        ownText(),
         attributes().associate { it.key to it.value },
         children().map { it.convert() }
     )
