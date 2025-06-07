@@ -47,6 +47,7 @@ $dokka.location:com.earthapp.shovel/Element/classes/#/PointingToDeclaration/sho
 $dokka.location:com.earthapp.shovel/Element/get/#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/-element/get.html
 $dokka.location:com.earthapp.shovel/Element/id/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/id.html
 $dokka.location:com.earthapp.shovel/Element/innerHTML/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/inner-h-t-m-l.html
+$dokka.location:com.earthapp.shovel/Element/ownTextContent/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/own-text-content.html
 $dokka.location:com.earthapp.shovel/Element/style/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/style.html
 $dokka.location:com.earthapp.shovel/Element/tagName/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/tag-name.html
 $dokka.location:com.earthapp.shovel/Element/textContent/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/text-content.html
