@@ -43,6 +43,11 @@ jobs:
     needs: setup
     timeout-minutes: 360
 
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+
     strategy:
       fail-fast: false
       matrix:
@@ -85,16 +90,23 @@ jobs:
         with:
           name: build-artifacts-${{ matrix.name }}
           path: |
+            build/classes/
             build/libs/
             build/bin/
             build/packages/js/
             build/outputs/
+            build/cocoapods/
+      - name: Attest Build Artifacts
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: build-artifacts-${{ matrix.name }}-${{ github.run_id }}
+          subject-digest: sha256:${{ steps.archive.outputs.artifact-digest }}
       - name: Stop Gradle
         run: ./gradlew --stop
 
   test:
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 120
+    timeout-minutes: 180
     needs: setup
 
     permissions:
