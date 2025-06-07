@@ -41,7 +41,7 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
     needs: setup
-    timeout-minutes: 120
+    timeout-minutes: 360
 
     strategy:
       fail-fast: false
