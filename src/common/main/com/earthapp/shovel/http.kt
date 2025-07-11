@@ -8,6 +8,7 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.utils.io.charsets.*
+import io.ktor.utils.io.readRemaining
 import kotlinx.io.IOException
 import kotlin.js.ExperimentalJsExport
 import kotlin.js.JsExport
@@ -23,9 +24,33 @@ internal val client
         followRedirects = false
     }
 
-internal const val USER_AGENT = "Ktor HTTP Client, Tabroom API v1"
+internal const val USER_AGENT = "Ktor HTTP Client, @earth-app/shovel"
 
 internal val cache = mutableMapOf<String, Document>()
+
+private suspend fun String.performRequest(request: HttpRequestBuilder.() -> Unit): HttpResponse {
+    val res = try {
+        client.get(this) {
+            headers {
+                append("User-Agent", USER_AGENT)
+                append("Host", substringAfter("://").substringBefore('/'))
+                append("Accept-Language", "en-US,en;q=0.9")
+                append("Connection", "keep-alive")
+                append("Upgrade-Insecure-Requests", "1")
+
+                request()
+            }
+        }
+    } catch (e: Throwable) {
+        throw IOException("Error happened when trying to fetch '$this': ${e.message}", e)
+    }
+
+    if (!res.status.isSuccess()) {
+        throw IOException("Failed to fetch '$this': ${res.status}\n${res.bodyAsText(Charsets.UTF_8)}")
+    }
+
+    return res
+}
 
 /**
  * Fetches a document from the given URL.
@@ -53,28 +78,79 @@ suspend fun fetch(url: String, request: HttpRequestBuilder.() -> Unit = {}): Doc
 suspend fun String.fetchDocument(request: HttpRequestBuilder.() -> Unit = {}): Document {
     if (this in cache) return cache[this]!!
 
-    val res = try {
-        client.get(this) {
-            headers {
-                append("User-Agent", USER_AGENT)
-                append("Host", substringAfter("://").substringBefore('/'))
-                append("Accept-Language", "en-US,en;q=0.9")
-                append("Connection", "keep-alive")
-                append("Upgrade-Insecure-Requests", "1")
-
-                request()
-            }
-        }
-    } catch (e: Throwable) {
-        throw IOException("Error happened when trying to fetch document '$this': ${e.message}", e)
-    }
-
-    if (!res.status.isSuccess()) throw IOException("Failed to fetch document '$this': ${res.status}\n${res.bodyAsText(Charsets.UTF_8)}")
-
+    val res = performRequest(request)
     val text = res.bodyAsText(Charsets.UTF_8)
     cache[this] = Document(this, text)
 
     return Document(this, text)
+}
+
+/**
+ * Fetches a document from the given URL, returning null if an error occurs.
+ *
+ * This function will cache the document for future use. You can clear the
+ * cache by calling [clearCache].
+ *
+ * @param request Additional builder methods for the GET request.
+ * @return The document from the page, or null if an error occurred.
+ */
+@JvmOverloads
+suspend fun String.fetchDocumentOrNull(request: HttpRequestBuilder.() -> Unit = {}): Document? {
+    return try {
+        fetchDocument(request)
+    } catch (e: IOException) {
+        null
+    }
+}
+
+/**
+ * Fetches the text content from the given URL.
+ * @param request Additional builder methods for the GET request.
+ * @return The text content of the page.
+ */
+@JvmOverloads
+suspend fun String.fetchText(request: HttpRequestBuilder.() -> Unit = {}): String {
+    val res = performRequest(request)
+    return res.bodyAsText(Charsets.UTF_8)
+}
+
+/**
+ * Fetches the text content from the given URL, returning null if an error occurs.
+ * @param request Additional builder methods for the GET request.
+ * @return The text content of the page, or null if an error occurred.
+ */
+@JvmOverloads
+suspend fun String.fetchTextOrNull(request: HttpRequestBuilder.() -> Unit = {}): String? {
+    return try {
+        fetchText(request)
+    } catch (e: IOException) {
+        null
+    }
+}
+
+/**
+ * Fetches the bytes from the given URL.
+ * @param request Additional builder methods for the GET request.
+ * @return The bytes of the page.
+ */
+@JvmOverloads
+suspend fun String.fetchBytes(request: HttpRequestBuilder.() -> Unit = {}): ByteArray {
+    val res = performRequest(request)
+    return res.bodyAsBytes()
+}
+
+/**
+ * Fetches the bytes from the given URL, returning null if an error occurs.
+ * @param request Additional builder methods for the GET request.
+ * @return The bytes of the page, or null if an error occurred.
+ */
+@JvmOverloads
+suspend fun String.fetchBytesOrNull(request: HttpRequestBuilder.() -> Unit = {}): ByteArray? {
+    return try {
+        fetchBytes(request)
+    } catch (e: IOException) {
+        null
+    }
 }
 
 /**

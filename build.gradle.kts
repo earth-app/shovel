@@ -21,7 +21,7 @@ plugins {
     signing
 }
 
-val v = "1.0.3"
+val v = "1.0.4"
 
 group = "com.earth-app.shovel"
 version = "${if (project.hasProperty("snapshot")) "$v-SNAPSHOT" else v}${project.findProperty("suffix")?.toString()?.run { "-${this}" } ?: ""}"
