@@ -14,6 +14,7 @@ private fun org.jsoup.nodes.Element.convert(): Element {
     return Element(
         tagName = tagName(),
         innerHTML = html(),
+        outerHTML = outerHtml(),
         textContent = text(),
         ownTextContent = ownText(),
         attributes = attributes().asList().associate { it.key to it.value },
@@ -24,4 +25,9 @@ private fun org.jsoup.nodes.Element.convert(): Element {
 actual fun Document.querySelectorAll(selector: String): List<Element> {
     val doc = Jsoup.parse(html)
     return doc.select(selector).map { it.convert() }
+}
+
+actual fun Element.querySelectorAll(selector: String): List<Element> {
+    val element = Jsoup.parse(outerHTML)
+    return element.select(selector).map { it.convert() }
 }

@@ -12,7 +12,7 @@ plugins {
     kotlin("plugin.serialization") version "2.2.0"
     kotlin("native.cocoapods") version "2.2.0"
     id("org.jetbrains.dokka") version "2.0.0"
-    id("com.android.library") version "8.11.0"
+    id("com.android.library") version "8.10.0"
     id("com.vanniktech.maven.publish") version "0.33.0"
     id("dev.petuska.npm.publish") version "3.5.3"
 
@@ -21,7 +21,7 @@ plugins {
     signing
 }
 
-val v = "1.0.2"
+val v = "1.0.3"
 
 group = "com.earth-app.shovel"
 version = "${if (project.hasProperty("snapshot")) "$v-SNAPSHOT" else v}${project.findProperty("suffix")?.toString()?.run { "-${this}" } ?: ""}"
@@ -68,7 +68,7 @@ kotlin {
     iosX64()
     iosArm64()
     androidTarget {
-        publishAllLibraryVariants()
+        publishLibraryVariants("debug", "release")
     }
 
     tvosArm64()
@@ -326,7 +326,7 @@ mavenPublishing {
         }
     }
 
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, true)
+    publishToMavenCentral(true)
     signAllPublications()
 }
 

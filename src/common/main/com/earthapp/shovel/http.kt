@@ -11,6 +11,7 @@ import io.ktor.utils.io.charsets.*
 import kotlinx.io.IOException
 import kotlin.js.ExperimentalJsExport
 import kotlin.js.JsExport
+import kotlin.js.JsName
 import kotlin.jvm.JvmOverloads
 
 internal const val PARALLEL_COUNT = 32
@@ -101,6 +102,10 @@ class Element internal constructor(
      * The inner HTML of the element.
      */
     val innerHTML: String,
+    /**
+     * The outer HTML of the element, including the tag itself.
+     */
+    val outerHTML: String,
     /**
      * The text content of the element and its children, excluding HTML tags.
      */
@@ -237,6 +242,7 @@ expect fun Document.querySelectorAll(selector: String): List<Element>
  * @return The first element that matches the selector, or null if it doesn't exist.
  */
 @JsExport
+@JsName("documentQuerySelector")
 fun Document.querySelector(selector: String, filter: (Element) -> Boolean = { true }): Element? = querySelectorAll(selector).firstOrNull(filter)
 
 /**
@@ -245,6 +251,7 @@ fun Document.querySelector(selector: String, filter: (Element) -> Boolean = { tr
  * @return The first element with the specified ID, or null if it doesn't exist.
  */
 @JsExport
+@JsName("documentGetElementById")
 fun Document.getElementById(id: String): Element? = querySelector("#$id")
 
 /**
@@ -253,6 +260,7 @@ fun Document.getElementById(id: String): Element? = querySelector("#$id")
  * @return A list of elements with the specified class name.
  */
 @JsExport
+@JsName("documentGetElementsByClassName")
 fun Document.getElementsByClassName(className: String): List<Element> = querySelectorAll(".$className")
 
 /**
@@ -261,7 +269,55 @@ fun Document.getElementsByClassName(className: String): List<Element> = querySel
  * @return The value of the input element, or null if it doesn't exist.
  */
 @JsExport
+@JsName("documentInputValue")
 fun Document.inputValue(name: String): String? {
+    val input = querySelector("input[name=$name]") ?: return null
+    return input["value"] ?: input["checked"]
+}
+
+/**
+ * Gets all elements that match the specified CSS selector within the element.
+ * @param selector The CSS selector to match.
+ * @return A list of elements that match the selector.
+ */
+expect fun Element.querySelectorAll(selector: String): List<Element>
+
+/**
+ * Gets the first element that matches the specified CSS selector within the element.
+ * @param selector The CSS selector to match.
+ * @param filter An optional filter function to apply to the elements.
+ * @return The first element that matches the selector, or null if it doesn't exist.
+ */
+@JsExport
+@JsName("elementQuerySelector")
+fun Element.querySelector(selector: String, filter: (Element) -> Boolean = { true }): Element? = querySelectorAll(selector).firstOrNull(filter)
+
+/**
+ * Gets the first element with the specified ID within the element.
+ * @param id The ID of the element to get.
+ * @return The first element with the specified ID, or null if it doesn't exist.
+ */
+@JsExport
+@JsName("elementGetElementById")
+fun Element.getElementById(id: String): Element? = querySelector("#$id")
+
+/**
+ * Gets all elements with the specified class name within the element.
+ * @param className The class name of the elements to get.
+ * @return A list of elements with the specified class name.
+ */
+@JsExport
+@JsName("elementGetElementsByClassName")
+fun Element.getElementsByClassName(className: String): List<Element> = querySelectorAll(".$className")
+
+/**
+ * Gets the value of an input element within the element.
+ * @param name The name of the input element.
+ * @return The value of the input element, or null if it doesn't exist.
+ */
+@JsExport
+@JsName("elementInputValue")
+fun Element.inputValue(name: String): String? {
     val input = querySelector("input[name=$name]") ?: return null
     return input["value"] ?: input["checked"]
 }
