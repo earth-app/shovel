@@ -8,7 +8,12 @@ $dokka.location:com.earthapp.shovel//clearCache/#/PointingToDeclaration/shovel/
 $dokka.location:com.earthapp.shovel//closeClient/#/PointingToDeclaration/shovel/com.earthapp.shovel/close-client.html
 $dokka.location:com.earthapp.shovel//engine/#/PointingToDeclaration/shovel/com.earthapp.shovel/engine.html
 $dokka.location:com.earthapp.shovel//fetch/#kotlin.String#kotlin.Function1[io.ktor.client.request.HttpRequestBuilder,kotlin.Unit]/PointingToDeclaration/shovel/com.earthapp.shovel/fetch.html
+$dokka.location:com.earthapp.shovel//fetchBytes/kotlin.String#kotlin.Function1[io.ktor.client.request.HttpRequestBuilder,kotlin.Unit]/PointingToDeclaration/shovel/com.earthapp.shovel/fetch-bytes.html
+$dokka.location:com.earthapp.shovel//fetchBytesOrNull/kotlin.String#kotlin.Function1[io.ktor.client.request.HttpRequestBuilder,kotlin.Unit]/PointingToDeclaration/shovel/com.earthapp.shovel/fetch-bytes-or-null.html
 $dokka.location:com.earthapp.shovel//fetchDocument/kotlin.String#kotlin.Function1[io.ktor.client.request.HttpRequestBuilder,kotlin.Unit]/PointingToDeclaration/shovel/com.earthapp.shovel/fetch-document.html
+$dokka.location:com.earthapp.shovel//fetchDocumentOrNull/kotlin.String#kotlin.Function1[io.ktor.client.request.HttpRequestBuilder,kotlin.Unit]/PointingToDeclaration/shovel/com.earthapp.shovel/fetch-document-or-null.html
+$dokka.location:com.earthapp.shovel//fetchText/kotlin.String#kotlin.Function1[io.ktor.client.request.HttpRequestBuilder,kotlin.Unit]/PointingToDeclaration/shovel/com.earthapp.shovel/fetch-text.html
+$dokka.location:com.earthapp.shovel//fetchTextOrNull/kotlin.String#kotlin.Function1[io.ktor.client.request.HttpRequestBuilder,kotlin.Unit]/PointingToDeclaration/shovel/com.earthapp.shovel/fetch-text-or-null.html
 $dokka.location:com.earthapp.shovel//getBodyText/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-body-text.html
 $dokka.location:com.earthapp.shovel//getCanonicalUrl/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-canonical-url.html
 $dokka.location:com.earthapp.shovel//getCharset/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-charset.html
