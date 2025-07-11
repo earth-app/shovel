@@ -14,7 +14,9 @@ $dokka.location:com.earthapp.shovel//getCanonicalUrl/com.earthapp.shovel.Documen
 $dokka.location:com.earthapp.shovel//getCharset/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-charset.html
 $dokka.location:com.earthapp.shovel//getDescription/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-description.html
 $dokka.location:com.earthapp.shovel//getElementById/com.earthapp.shovel.Document#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/get-element-by-id.html
+$dokka.location:com.earthapp.shovel//getElementById/com.earthapp.shovel.Element#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/get-element-by-id.html
 $dokka.location:com.earthapp.shovel//getElementsByClassName/com.earthapp.shovel.Document#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/get-elements-by-class-name.html
+$dokka.location:com.earthapp.shovel//getElementsByClassName/com.earthapp.shovel.Element#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/get-elements-by-class-name.html
 $dokka.location:com.earthapp.shovel//getFaviconUrl/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-favicon-url.html
 $dokka.location:com.earthapp.shovel//getIconLinks/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-icon-links.html
 $dokka.location:com.earthapp.shovel//getLanguage/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-language.html
@@ -25,8 +27,11 @@ $dokka.location:com.earthapp.shovel//getTitle/com.earthapp.shovel.Document#/Poin
 $dokka.location:com.earthapp.shovel//getTwitterCardMetadata/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-twitter-card-metadata.html
 $dokka.location:com.earthapp.shovel//getViewport/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-viewport.html
 $dokka.location:com.earthapp.shovel//inputValue/com.earthapp.shovel.Document#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/input-value.html
+$dokka.location:com.earthapp.shovel//inputValue/com.earthapp.shovel.Element#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/input-value.html
 $dokka.location:com.earthapp.shovel//querySelector/com.earthapp.shovel.Document#kotlin.String#kotlin.Function1[com.earthapp.shovel.Element,kotlin.Boolean]/PointingToDeclaration/shovel/com.earthapp.shovel/query-selector.html
+$dokka.location:com.earthapp.shovel//querySelector/com.earthapp.shovel.Element#kotlin.String#kotlin.Function1[com.earthapp.shovel.Element,kotlin.Boolean]/PointingToDeclaration/shovel/com.earthapp.shovel/query-selector.html
 $dokka.location:com.earthapp.shovel//querySelectorAll/com.earthapp.shovel.Document#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/query-selector-all.html
+$dokka.location:com.earthapp.shovel//querySelectorAll/com.earthapp.shovel.Element#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/query-selector-all.html
 $dokka.location:com.earthapp.shovel//transformClassName/com.earthapp.shovel.Document#kotlin.String#kotlin.Function1[kotlin.collections.List[com.earthapp.shovel.Element],TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/shovel/com.earthapp.shovel/transform-class-name.html
 $dokka.location:com.earthapp.shovel//transformId/com.earthapp.shovel.Document#kotlin.String#kotlin.Function1[com.earthapp.shovel.Element,TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/shovel/com.earthapp.shovel/transform-id.html
 $dokka.location:com.earthapp.shovel//transformQuerySelector/com.earthapp.shovel.Document#kotlin.String#kotlin.Function1[com.earthapp.shovel.Element,TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/shovel/com.earthapp.shovel/transform-query-selector.html
@@ -47,6 +52,7 @@ $dokka.location:com.earthapp.shovel/Element/classes/#/PointingToDeclaration/sho
 $dokka.location:com.earthapp.shovel/Element/get/#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/-element/get.html
 $dokka.location:com.earthapp.shovel/Element/id/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/id.html
 $dokka.location:com.earthapp.shovel/Element/innerHTML/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/inner-h-t-m-l.html
+$dokka.location:com.earthapp.shovel/Element/outerHTML/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/outer-h-t-m-l.html
 $dokka.location:com.earthapp.shovel/Element/ownTextContent/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/own-text-content.html
 $dokka.location:com.earthapp.shovel/Element/style/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/style.html
 $dokka.location:com.earthapp.shovel/Element/tagName/#/PointingToDeclaration/shovel/com.earthapp.shovel/-element/tag-name.html
