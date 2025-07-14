@@ -12,8 +12,8 @@ plugins {
     kotlin("plugin.serialization") version "2.2.0"
     kotlin("native.cocoapods") version "2.2.0"
     id("org.jetbrains.dokka") version "2.0.0"
-    id("com.android.library") version "8.10.0"
-    id("com.vanniktech.maven.publish") version "0.33.0"
+    id("com.android.library") version "8.11.1"
+    id("com.vanniktech.maven.publish") version "0.34.0"
     id("dev.petuska.npm.publish") version "3.5.3"
 
     `maven-publish`
@@ -79,7 +79,7 @@ kotlin {
     watchosDeviceArm64()
     watchosSimulatorArm64()
 
-    val ktorVersion = "3.2.1"
+    val ktorVersion = "3.2.2"
     val ksoupVersion = "0.2.0"
 
     sourceSets {
