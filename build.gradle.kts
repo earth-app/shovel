@@ -96,7 +96,7 @@ kotlin {
         jvmMain.dependencies {
             api("org.jsoup:jsoup:1.21.2")
             api("io.ktor:ktor-client-java:$ktorVersion")
-            api("ch.qos.logback:logback-classic:1.5.18")
+            api("ch.qos.logback:logback-classic:1.5.19")
         }
 
         androidMain.dependencies {
