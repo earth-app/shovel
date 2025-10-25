@@ -7,9 +7,9 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 import org.jetbrains.kotlin.gradle.targets.js.yarn.yarn
 
 plugins {
-    kotlin("multiplatform") version "2.2.20"
-    kotlin("plugin.serialization") version "2.2.20"
-    kotlin("native.cocoapods") version "2.2.20"
+    kotlin("multiplatform") version "2.2.21"
+    kotlin("plugin.serialization") version "2.2.21"
+    kotlin("native.cocoapods") version "2.2.21"
     id("org.jetbrains.dokka") version "2.1.0"
     id("com.android.library") version "8.13.0"
     id("com.vanniktech.maven.publish") version "0.34.0"
@@ -96,7 +96,7 @@ kotlin {
         jvmMain.dependencies {
             api("org.jsoup:jsoup:1.21.2")
             api("io.ktor:ktor-client-java:$ktorVersion")
-            api("ch.qos.logback:logback-classic:1.5.19")
+            api("ch.qos.logback:logback-classic:1.5.20")
         }
 
         androidMain.dependencies {
