@@ -78,7 +78,7 @@ kotlin {
     watchosDeviceArm64()
     watchosSimulatorArm64()
 
-    val ktorVersion = "3.3.2"
+    val ktorVersion = "3.3.3"
     val ksoupVersion = "0.2.0"
 
     sourceSets {
