@@ -24,7 +24,7 @@ jobs:
           java-version: '17'
           cache: 'gradle'
       - name: Set up Konan
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.konan/caches
@@ -71,7 +71,7 @@ jobs:
           java-version: '17'
           cache: 'gradle'
       - name: Set up Konan
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.konan/caches
@@ -137,7 +137,7 @@ jobs:
           distribution: 'zulu'
           cache: 'gradle'
       - name: Set up Konan
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.konan/caches
@@ -245,7 +245,7 @@ jobs:
           java-version: '17'
           cache: 'gradle'
       - name: Set up Konan
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.konan/caches
