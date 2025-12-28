@@ -20,7 +20,7 @@ plugins {
     signing
 }
 
-val v = "1.0.4"
+val v = "1.1.0"
 
 group = "com.earth-app.shovel"
 version = "${if (project.hasProperty("snapshot")) "$v-SNAPSHOT" else v}${project.findProperty("suffix")?.toString()?.run { "-${this}" } ?: ""}"
@@ -202,7 +202,7 @@ fun KotlinMultiplatformExtension.configureSourceSets() {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 34
     namespace = "com.earthapp.shovel"
 
     compileOptions {
