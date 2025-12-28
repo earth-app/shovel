@@ -7,11 +7,11 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 import org.jetbrains.kotlin.gradle.targets.js.yarn.yarn
 
 plugins {
-    kotlin("multiplatform") version "2.2.21"
-    kotlin("plugin.serialization") version "2.2.21"
-    kotlin("native.cocoapods") version "2.2.21"
+    kotlin("multiplatform") version "2.3.0"
+    kotlin("plugin.serialization") version "2.3.0"
+    kotlin("native.cocoapods") version "2.3.0"
     id("org.jetbrains.dokka") version "2.1.0"
-    id("com.android.library") version "8.13.1"
+    id("com.android.library") version "8.13.2"
     id("com.vanniktech.maven.publish") version "0.35.0"
     id("dev.petuska.npm.publish") version "3.5.3"
 
@@ -78,7 +78,7 @@ kotlin {
     watchosDeviceArm64()
     watchosSimulatorArm64()
 
-    val ktorVersion = "3.3.2"
+    val ktorVersion = "3.3.3"
     val ksoupVersion = "0.2.0"
 
     sourceSets {
@@ -96,7 +96,7 @@ kotlin {
         jvmMain.dependencies {
             api("org.jsoup:jsoup:1.21.2")
             api("io.ktor:ktor-client-java:$ktorVersion")
-            api("ch.qos.logback:logback-classic:1.5.21")
+            api("ch.qos.logback:logback-classic:1.5.23")
         }
 
         androidMain.dependencies {
