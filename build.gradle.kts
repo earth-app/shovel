@@ -1,6 +1,8 @@
 @file:OptIn(ExperimentalWasmDsl::class)
 
+import com.android.build.api.dsl.androidLibrary
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
@@ -11,7 +13,7 @@ plugins {
     kotlin("plugin.serialization") version "2.3.0"
     kotlin("native.cocoapods") version "2.3.0"
     id("org.jetbrains.dokka") version "2.1.0"
-    id("com.android.library") version "8.13.2"
+    id("com.android.kotlin.multiplatform.library") version "8.13.2"
     id("com.vanniktech.maven.publish") version "0.35.0"
     id("dev.petuska.npm.publish") version "3.5.3"
 
@@ -66,8 +68,13 @@ kotlin {
 
     iosX64()
     iosArm64()
-    androidTarget {
-        publishLibraryVariants("debug", "release")
+    androidLibrary {
+        namespace = "com.earthapp.shovel"
+        compileSdk = 36
+
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_11)
+        }
     }
 
     tvosArm64()
@@ -199,16 +206,6 @@ fun KotlinMultiplatformExtension.configureSourceSets() {
                 progressiveMode = true
             }
         }
-}
-
-android {
-    compileSdk = 34
-    namespace = "com.earthapp.shovel"
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
 }
 
 tasks {
