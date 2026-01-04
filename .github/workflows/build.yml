@@ -199,6 +199,8 @@ jobs:
           update-comment: true
           min-coverage-overall: 85
           min-coverage-changed-files: 90
+      - name: Stop Gradle
+        run: ./gradlew --stop
 
   deploy:
     runs-on: ubuntu-latest
