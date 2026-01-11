@@ -1,6 +1,5 @@
-@file:OptIn(ExperimentalWasmDsl::class)
-
 import com.android.build.api.dsl.androidLibrary
+import dev.petuska.npm.publish.task.NpmPublishTask
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
@@ -211,6 +210,14 @@ fun KotlinMultiplatformExtension.configureSourceSets() {
 tasks {
     clean {
         delete("kotlin-js-store")
+    }
+
+    withType<NpmPublishTask> {
+        tag = when {
+            project.hasProperty("snapshot") -> "next"
+            project.hasProperty("suffix") -> "beta"
+            else -> "latest"
+        }
     }
 
     register("jvmJacocoTestReport", JacocoReport::class) {
