@@ -14,6 +14,16 @@ fun Document.getLanguage(): String? {
     return metaLang?.takeIf { it.isNotEmpty() }
 }
 
+/**
+ * Gets the list of language codes of the document.
+ * This splits the language string by commas and trims each code.
+ * @return A list of language codes, or an empty list if not found.
+ */
+fun Document.getLanguageCodes(): List<String> {
+    val lang = getLanguage() ?: return emptyList()
+    return lang.split(",").map { it.trim() }.filter { it.isNotEmpty() }
+}
+
 // Head
 
 /**
@@ -125,6 +135,41 @@ fun Document.getFaviconUrl(): String? {
 fun Document.getStyleSheets(): List<String> {
     return querySelectorAll("link[rel='stylesheet']").mapNotNull { element ->
         element["href"]?.trim()?.takeIf { it.isNotEmpty() }
+    }
+}
+
+/**
+ * Gets all meta tags in the document as a map of name/property to content.
+ * This includes both `<meta name='...'>` and `<meta property='...'>` tags.
+ * @return A map of meta tag names/properties and their content.
+ */
+fun Document.getMetaTags(): Map<String, String> {
+    val metaTags = mutableMapOf<String, String>()
+    querySelectorAll("meta").forEach { element ->
+        val name = element["name"]?.trim() ?: element["property"]?.trim() ?: return@forEach
+        val content = element["content"]?.trim() ?: return@forEach
+        metaTags[name] = content
+    }
+    return metaTags
+}
+
+/**
+ * Gets all link tags in the document head as a list of hrefs.
+ * @return A list of link hrefs.
+ */
+fun Document.getHeadLinks(): List<String> {
+    return querySelectorAll("head link").mapNotNull { element ->
+        element["href"]?.trim()?.takeIf { it.isNotEmpty() }
+    }
+}
+
+/**
+ * Gets all script tags in the document head as a list of srcs.
+ * @return A list of script srcs.
+ */
+fun Document.getScripts(): List<String> {
+    return querySelectorAll("script").mapNotNull { element ->
+        element["src"]?.trim()?.takeIf { it.isNotEmpty() }
     }
 }
 

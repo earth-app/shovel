@@ -8,7 +8,6 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.utils.io.charsets.*
-import io.ktor.utils.io.readRemaining
 import kotlinx.io.IOException
 import kotlin.js.ExperimentalJsExport
 import kotlin.js.JsExport
@@ -18,11 +17,10 @@ import kotlin.jvm.JvmOverloads
 internal const val PARALLEL_COUNT = 32
 internal expect val engine: HttpClientEngine
 
-internal val client
-    get() = HttpClient(engine) {
-        expectSuccess = false
-        followRedirects = false
-    }
+internal val client = HttpClient(engine) {
+    expectSuccess = false
+    followRedirects = true
+}
 
 internal const val USER_AGENT = "Ktor HTTP Client, @earth-app/shovel"
 
