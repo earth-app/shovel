@@ -23,10 +23,14 @@ $dokka.location:com.earthapp.shovel//getElementById/com.earthapp.shovel.Element#
 $dokka.location:com.earthapp.shovel//getElementsByClassName/com.earthapp.shovel.Document#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/get-elements-by-class-name.html
 $dokka.location:com.earthapp.shovel//getElementsByClassName/com.earthapp.shovel.Element#kotlin.String/PointingToDeclaration/shovel/com.earthapp.shovel/get-elements-by-class-name.html
 $dokka.location:com.earthapp.shovel//getFaviconUrl/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-favicon-url.html
+$dokka.location:com.earthapp.shovel//getHeadLinks/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-head-links.html
 $dokka.location:com.earthapp.shovel//getIconLinks/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-icon-links.html
 $dokka.location:com.earthapp.shovel//getLanguage/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-language.html
+$dokka.location:com.earthapp.shovel//getLanguageCodes/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-language-codes.html
 $dokka.location:com.earthapp.shovel//getMainText/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-main-text.html
+$dokka.location:com.earthapp.shovel//getMetaTags/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-meta-tags.html
 $dokka.location:com.earthapp.shovel//getOpenGraphMetadata/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-open-graph-metadata.html
+$dokka.location:com.earthapp.shovel//getScripts/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-scripts.html
 $dokka.location:com.earthapp.shovel//getStyleSheets/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-style-sheets.html
 $dokka.location:com.earthapp.shovel//getTitle/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-title.html
 $dokka.location:com.earthapp.shovel//getTwitterCardMetadata/com.earthapp.shovel.Document#/PointingToDeclaration/shovel/com.earthapp.shovel/get-twitter-card-metadata.html
