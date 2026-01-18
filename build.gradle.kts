@@ -13,7 +13,7 @@ plugins {
     kotlin("native.cocoapods") version "2.3.0"
     id("org.jetbrains.dokka") version "2.1.0"
     id("com.android.kotlin.multiplatform.library") version "8.13.2"
-    id("com.vanniktech.maven.publish") version "0.35.0"
+    id("com.vanniktech.maven.publish") version "0.36.0"
     id("dev.petuska.npm.publish") version "3.5.3"
 
     `maven-publish`
@@ -102,7 +102,7 @@ kotlin {
         jvmMain.dependencies {
             api("org.jsoup:jsoup:1.22.1")
             api("io.ktor:ktor-client-java:$ktorVersion")
-            api("ch.qos.logback:logback-classic:1.5.24")
+            api("ch.qos.logback:logback-classic:1.5.25")
         }
 
         androidMain.dependencies {
