@@ -12,7 +12,7 @@ plugins {
     kotlin("plugin.serialization") version "2.3.0"
     kotlin("native.cocoapods") version "2.3.0"
     id("org.jetbrains.dokka") version "2.1.0"
-    id("com.android.kotlin.multiplatform.library") version "8.13.2"
+    id("com.android.kotlin.multiplatform.library") version "9.0.0"
     id("com.vanniktech.maven.publish") version "0.36.0"
     id("dev.petuska.npm.publish") version "3.5.3"
 
