@@ -13,7 +13,7 @@ plugins {
     kotlin("native.cocoapods") version "2.4.0"
     id("org.jetbrains.dokka") version "2.2.0"
     id("com.android.kotlin.multiplatform.library") version "8.13.2"
-    id("com.vanniktech.maven.publish") version "0.36.0"
+    id("com.vanniktech.maven.publish") version "0.37.0"
     id("dev.petuska.npm.publish") version "3.5.3"
 
     `maven-publish`
@@ -84,7 +84,7 @@ kotlin {
     watchosDeviceArm64()
     watchosSimulatorArm64()
 
-    val ktorVersion = "3.5.0"
+    val ktorVersion = "3.5.1"
     val ksoupVersion = "0.2.0"
 
     sourceSets {
@@ -102,7 +102,7 @@ kotlin {
         jvmMain.dependencies {
             api("org.jsoup:jsoup:1.22.2")
             api("io.ktor:ktor-client-java:$ktorVersion")
-            api("ch.qos.logback:logback-classic:1.5.34")
+            api("ch.qos.logback:logback-classic:1.5.37")
         }
 
         androidMain.dependencies {
